@@ -34,8 +34,6 @@
 @end
 #endif
 
-static NSMutableArray * availableMediaDiscoverer = nil;     // Global list of media discoverers
-
 @implementation VLCSplashScreenWindowController
 #if !ENABLE_EXTENDED_SPLASH_SCREEN
 @synthesize hasSelection=_hasSelection;
@@ -92,7 +90,6 @@ static NSMutableArray * availableMediaDiscoverer = nil;     // Global list of me
     {
         availableMediaDiscoverer = [[NSArray arrayWithObjects:
                                      [[[VLCMediaDiscoverer alloc] initWithName:@"sap"] autorelease],
-                                     [[[VLCMediaDiscoverer alloc] initWithName:@"upnp_intel"] autorelease],
                                      [[[VLCMediaDiscoverer alloc] initWithName:@"freebox"] autorelease],
                                      [[[VLCDVDDiscoverer alloc] init] autorelease],nil] retain];
     }
